@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 
 import styles from './style';
 
@@ -63,59 +63,62 @@ class Profile extends Component {
             </View>
 
             <View style={styles.itemWrapper}>
-              <Image source={Icons.myDoctor} />
+              <Image source={Icons.calendarIcon} />
               <View style={styles.middleItemWrap}>
-                <Text style={styles.itemName}>My Doctors</Text>
+                <Text style={styles.itemName}>Appointments</Text>
               </View>
               <Image source={Icons.goIcon} />
             </View>
 
             <View style={styles.itemWrapper}>
-              <Image source={Icons.myDoctor} />
+              <Image source={Icons.onlineConsultIcon} />
               <View style={styles.middleItemWrap}>
-                <Text style={styles.itemName}>My Doctors</Text>
+                <Text style={styles.itemName}>Online consultation</Text>
               </View>
               <Image source={Icons.goIcon} />
             </View>
 
             <View style={styles.itemWrapper}>
-              <Image source={Icons.myDoctor} />
+              <Image source={Icons.medicalRecordIcon} />
               <View style={styles.middleItemWrap}>
-                <Text style={styles.itemName}>My Doctors</Text>
+                <Text style={styles.itemName}>Medical records</Text>
               </View>
               <Image source={Icons.goIcon} />
             </View>
 
             <View style={styles.itemWrapper}>
-              <Image source={Icons.myDoctor} />
+              <Image source={Icons.reminderIcon} />
               <View style={styles.middleItemWrap}>
-                <Text style={styles.itemName}>My Doctors</Text>
+                <Text style={styles.itemName}>Reminders</Text>
               </View>
               <Image source={Icons.goIcon} />
             </View>
 
             <View style={styles.itemWrapper}>
-              <Image source={Icons.myDoctor} />
+              <Image source={Icons.healthInterestIcon} />
               <View style={styles.middleItemWrap}>
-                <Text style={styles.itemName}>My Doctors</Text>
+                <Text style={styles.itemName}>Health interest</Text>
               </View>
               <Image source={Icons.goIcon} />
             </View>
 
             <View style={styles.itemWrapper}>
-              <Image source={Icons.myDoctor} />
+              <Image source={Icons.paymentIcon} />
               <View style={styles.middleItemWrap}>
-                <Text style={styles.itemName}>My Doctors</Text>
+                <Text style={styles.itemName}>My payments</Text>
               </View>
               <Image source={Icons.goIcon} />
             </View>
 
             <View style={styles.itemWrapperLast}>
-              <Image source={Icons.myDoctor} />
+              <Image source={Icons.offerIcon} />
               <View style={styles.middleItemWrap}>
-                <Text style={styles.itemName}>My Doctors</Text>
+                <Text style={styles.itemName}>Offers</Text>
               </View>
-              <Image source={Icons.goIcon} />
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Offer')}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
             </View>
           </View>
         </View>

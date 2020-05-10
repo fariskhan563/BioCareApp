@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView, StatusBar, Alert} from 'react-native';
 // import {Provider} from 'react-redux';
@@ -7,14 +8,15 @@ import {SafeAreaView, StatusBar, Alert} from 'react-native';
 // import {PersistGate} from 'redux-persist/integration/react'
 
 //Navigation
-// import Navigation from './src/navigation';
+import Navigation from './src/navigation';
 
 import Profile from './src/screens/Profile';
+import Offers from './src/screens/Offer';
 
 export default function App() {
   // console.disableYellowBox = true;
   return (
-    <Profile />
+    <Navigation />
 
     // <Provider store={store}>
     //   <PersistGate persistor={persistor}>

@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'BioCardApp' do
-  # Pods for BioCardApp
+target 'BioCare' do
+  # Pods for BioCare
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'BioCardApp' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'BioCardAppTests' do
+  target 'BioCareTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'BioCardApp' do
   end
 end
 
-target 'BioCardApp-tvOS' do
-  # Pods for BioCardApp-tvOS
+target 'BioCare-tvOS' do
+  # Pods for BioCare-tvOS
 
-  target 'BioCardApp-tvOSTests' do
+  target 'BioCare-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

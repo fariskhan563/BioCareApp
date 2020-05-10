@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "BioCardApp.app"
-               BlueprintName = "BioCardApp"
-               ReferencedContainer = "container:BioCardApp.xcodeproj">
+               BuildableName = "BioCare.app"
+               BlueprintName = "BioCare"
+               ReferencedContainer = "container:BioCare.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "BioCardAppTests.xctest"
-               BlueprintName = "BioCardAppTests"
-               ReferencedContainer = "container:BioCardApp.xcodeproj">
+               BuildableName = "BioCareTests.xctest"
+               BlueprintName = "BioCareTests"
+               ReferencedContainer = "container:BioCare.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BioCardApp.app"
-            BlueprintName = "BioCardApp"
-            ReferencedContainer = "container:BioCardApp.xcodeproj">
+            BuildableName = "BioCare.app"
+            BlueprintName = "BioCare"
+            ReferencedContainer = "container:BioCare.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BioCardApp.app"
-            BlueprintName = "BioCardApp"
-            ReferencedContainer = "container:BioCardApp.xcodeproj">
+            BuildableName = "BioCare.app"
+            BlueprintName = "BioCare"
+            ReferencedContainer = "container:BioCare.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

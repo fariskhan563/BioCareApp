@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Image} from 'react-native';
 
 import styles from './style';
 
-import BackIcon from '../../utils/svg/backIcon.svg';
+import {Icons, Images} from '../../utils';
 
 //Libraries
 import LinearGradient from 'react-native-linear-gradient';
+import ProgressBar from 'react-native-progress/Bar';
 
 class Profile extends Component {
   render() {
@@ -17,12 +18,106 @@ class Profile extends Component {
             colors={['#5588e7', '#75e4f7']}
             start={{x: 0.16, y: 0.16}}
             end={{x: 0.8, y: 0.8}}
-            locations={[0.16, 0.8]}
+            locations={[0.16, 5]}
             style={styles.upperCont}>
-            <Text style={styles.buttonText}>Sign in with Facebook</Text>
+            <View style={styles.upperWrapper}>
+              <View style={styles.backIconWrapper}>
+                <Image source={Icons.BackIcon} />
+              </View>
+              <View style={styles.imageWrapper}>
+                <Image source={Images.Profile} style={styles.image} />
+              </View>
+              <View style={styles.settingIconWrapper}>
+                <Image source={Icons.SettingIcon} />
+              </View>
+            </View>
+            <View style={styles.midWrapper}>
+              <Text style={styles.uName}>Elizabeth</Text>
+              <Text style={[styles.uNum, {marginTop: 3}]}>+91 78383540420</Text>
+            </View>
+            <Text style={[styles.uNum, {marginTop: 6, marginBottom: 2}]}>
+              22%
+            </Text>
+            <ProgressBar
+              progress={0.55}
+              width={300}
+              height={5}
+              borderRadius={20}
+              color={'#FFFFFF'}
+              unfilledColor={'rgba(0, 0, 0, 0.1)'}
+              borderWidth={5}
+              borderColor={'rgba(0, 0, 0, 0.1)'}
+            />
+            <View style={styles.lowerWrapper}>
+              <Text style={styles.uNum}>Complete your profile</Text>
+            </View>
           </LinearGradient>
-          {/* <View style={styles.upperCont} /> */}
-          <View style={styles.lowerCont} />
+
+          <View style={styles.lowerCont}>
+            <View style={styles.itemWrapper}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+
+            <View style={styles.itemWrapper}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+
+            <View style={styles.itemWrapper}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+
+            <View style={styles.itemWrapper}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+
+            <View style={styles.itemWrapper}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+
+            <View style={styles.itemWrapper}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+
+            <View style={styles.itemWrapper}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+
+            <View style={styles.itemWrapperLast}>
+              <Image source={Icons.myDoctor} />
+              <View style={styles.middleItemWrap}>
+                <Text style={styles.itemName}>My Doctors</Text>
+              </View>
+              <Image source={Icons.goIcon} />
+            </View>
+          </View>
         </View>
       </View>
     );

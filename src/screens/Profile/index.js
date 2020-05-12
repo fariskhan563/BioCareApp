@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity, Alert} from 'react-native';
 
 import styles from './style';
 
@@ -59,7 +59,10 @@ class Profile extends Component {
               <View style={styles.middleItemWrap}>
                 <Text style={styles.itemName}>My Doctors</Text>
               </View>
-              <Image source={Icons.goIcon} />
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('FindBook')}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
             </View>
 
             <View style={styles.itemWrapper}>
@@ -67,7 +70,12 @@ class Profile extends Component {
               <View style={styles.middleItemWrap}>
                 <Text style={styles.itemName}>Appointments</Text>
               </View>
-              <Image source={Icons.goIcon} />
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('DoctorCategory')
+                }>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
             </View>
 
             <View style={styles.itemWrapper}>

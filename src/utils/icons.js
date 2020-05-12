@@ -23,4 +23,7 @@ export default {
   gastroIcon: require('../assets/icons/GastroenterologistIcon.png'),
   opthaIcon: require('../assets/icons/OpthamologistIcon.png'),
   pychoIcon: require('../assets/icons/PsychiatristIcon.png'),
+  dropDownIcon: require('../assets/icons/dropDownIcon.png'),
+  goIconWhite: require('../assets/icons/goIconWhite.png'),
+  goIconBig: require('../assets/icons/goIconBig.png'),
 };

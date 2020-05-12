@@ -8,6 +8,7 @@ import Profile from '../screens/Profile';
 import Offers from '../screens/Offer';
 import FindAndBook from '../screens/FindAndBook';
 import DoctorCatagories from '../screens/DoctorCatagories';
+import TimeSlot1 from '../screens/TimeSlot1';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ function Navigation() {
         <Stack.Screen name="Offer" component={Offers} />
         <Stack.Screen name="FindBook" component={FindAndBook} />
         <Stack.Screen name="DoctorCategory" component={DoctorCatagories} />
+        <Stack.Screen name="TimeSlot1" component={TimeSlot1} />
       </Stack.Navigator>
     </NavigationContainer>
   );

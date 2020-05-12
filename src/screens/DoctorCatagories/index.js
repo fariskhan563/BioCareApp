@@ -54,9 +54,9 @@ class DoctorCatagories extends Component {
                     <Image source={Icons.opthaIcon} />
                     <Text style={styles.specialText}>Opthamologist</Text>
                     <TouchableOpacity
-                      onPress={() => {
-                        alert('Pressed !!!');
-                      }}>
+                      onPress={() =>
+                        this.props.navigation.navigate('TimeSlot1')
+                      }>
                       <Image source={Icons.goIcon} />
                     </TouchableOpacity>
                   </View>

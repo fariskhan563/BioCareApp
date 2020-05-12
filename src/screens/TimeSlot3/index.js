@@ -39,7 +39,7 @@ class TimeSlot3 extends Component {
                     <Text style={styles.dropdownSelectedText}>South Delhi</Text>
                     <Image
                       style={styles.dropdownImg}
-                      source={Icons.dropdownIcon}
+                      source={Icons.dropDownIcon}
                     />
                   </View>
                 </TouchableOpacity>

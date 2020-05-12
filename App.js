@@ -10,9 +10,6 @@ import {SafeAreaView, StatusBar, Alert} from 'react-native';
 //Navigation
 import Navigation from './src/navigation';
 
-import Profile from './src/screens/Profile';
-import Offers from './src/screens/Offer';
-
 export default function App() {
   // console.disableYellowBox = true;
   return (

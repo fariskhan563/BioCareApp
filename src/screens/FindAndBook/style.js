@@ -83,6 +83,7 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+    marginBottom: 10,
   },
   DocSpecsWrapper: {
     width: '100%',

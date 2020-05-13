@@ -26,4 +26,6 @@ export default {
   dropDownIcon: require('../assets/icons/dropDownIcon.png'),
   goIconWhite: require('../assets/icons/goIconWhite.png'),
   goIconBig: require('../assets/icons/goIconBig.png'),
+  LeftDateIcon: require('../assets/icons/leftdatechange.png'),
+  RightDateIcon: require('../assets/icons/rightdatechange.png'),
 };

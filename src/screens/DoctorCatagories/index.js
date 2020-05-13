@@ -4,11 +4,61 @@ import {Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 import styles from './style';
 
 import {Icons, Images} from '../../utils';
-import {TextInput} from 'react-native-gesture-handler';
+import {TextInput, FlatList} from 'react-native-gesture-handler';
 
 //Libraries
 import LinearGradient from 'react-native-linear-gradient';
-import {SafeAreaView} from 'react-native-safe-area-context';
+
+const doctors = [
+  {
+    cat_id: '1',
+    cat_img: Icons.opthaIcon,
+    cat_name: 'Opthamologist',
+    screenName: 'TimeSlot1',
+  },
+  {
+    cat_id: '2',
+    cat_img: Icons.dermoIcon,
+    cat_name: 'Dermatologist',
+    screenName: 'TimeSlot2',
+  },
+  {
+    cat_id: '3',
+    cat_img: Icons.cardioIcon,
+    cat_name: 'Cardiologist',
+    screenName: 'TimeSlot3',
+  },
+  {
+    cat_id: '4',
+    cat_img: Icons.gastroIcon,
+    cat_name: 'Gastroenterologist',
+    screenName: '',
+  },
+  {
+    cat_id: '5',
+    cat_img: Icons.pychoIcon,
+    cat_name: 'Psychiatrist',
+    screenName: '',
+  },
+  {
+    cat_id: '6',
+    cat_img: Icons.earIcon,
+    cat_name: 'Ear-Nose-Throat (ENT) Specialist',
+    screenName: '',
+  },
+  {
+    cat_id: '7',
+    cat_img: Icons.gynoIcon,
+    cat_name: 'Gynecologist/Obstetricia',
+    screenName: '',
+  },
+  {
+    cat_id: '8',
+    cat_img: Icons.neuroIcon,
+    cat_name: 'Neurologist',
+    screenName: '',
+  },
+];
 
 class DoctorCatagories extends Component {
   render() {
@@ -46,99 +96,109 @@ class DoctorCatagories extends Component {
           <View style={styles.topText}>
             <Text style={styles.texthead}>Top Specialities</Text>
           </View>
-          <SafeAreaView>
-            <ScrollView>
-              <View>
-                <View style={styles.docListWrapper}>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.opthaIcon} />
-                    <Text style={styles.specialText}>Opthamologist</Text>
-                    <TouchableOpacity
-                      onPress={() =>
-                        this.props.navigation.navigate('TimeSlot1')
-                      }>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.dermoIcon} />
-                    <Text style={styles.specialText}>Dermatologist</Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        this.props.navigation.navigate('TimeSlot3');
-                      }}>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.cardioIcon} />
-                    <Text style={styles.specialText}>Cardiologist</Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        alert('Pressed !!!');
-                      }}>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.gastroIcon} />
-                    <Text style={styles.specialText}>Gastroenterologist</Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        alert('Pressed !!!');
-                      }}>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.pychoIcon} />
-                    <Text style={styles.specialText}>Psychiatrist</Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        alert('Pressed !!!');
-                      }}>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.earIcon} />
-                    <Text style={styles.specialText}>
-                      Ear-Nose-Throat (ENT) Specialist
-                    </Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        alert('Pressed !!!');
-                      }}>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.gynoIcon} />
-                    <Text style={styles.specialText}>
-                      Gynecologist/Obstetrician
-                    </Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        alert('Pressed !!!');
-                      }}>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.docTypeWrapper}>
-                    <Image source={Icons.neuroIcon} />
-                    <Text style={styles.specialText}>Neurologist</Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        alert('Pressed !!!');
-                      }}>
-                      <Image source={Icons.goIcon} />
-                    </TouchableOpacity>
-                  </View>
+          <View style={styles.docListWrapper}>
+            <FlatList
+              scrollEnabled={true}
+              showsVerticalScrollIndicator={false}
+              data={doctors}
+              renderItem={({item}) => (
+                <View style={styles.docTypeWrapper}>
+                  <Image style={styles.doccatImg} source={item.cat_img} />
+                  <Text style={styles.specialText}>{item.cat_name}</Text>
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate(item.screenName)
+                    }>
+                    <Image source={Icons.goIcon} />
+                  </TouchableOpacity>
                 </View>
-              </View>
-            </ScrollView>
-          </SafeAreaView>
+              )}
+              keyExtractor={item => item.cat_id}
+            />
+          </View>
         </View>
+        {/* <View style={styles.docListWrapper}>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.opthaIcon} />
+              <Text style={styles.specialText}>Opthamologist</Text>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('TimeSlot1')}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.dermoIcon} />
+              <Text style={styles.specialText}>Dermatologist</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('TimeSlot3');
+                }}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.cardioIcon} />
+              <Text style={styles.specialText}>Cardiologist</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('Pressed !!!');
+                }}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.gastroIcon} />
+              <Text style={styles.specialText}>Gastroenterologist</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('Pressed !!!');
+                }}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.pychoIcon} />
+              <Text style={styles.specialText}>Psychiatrist</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('Pressed !!!');
+                }}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.earIcon} />
+              <Text style={styles.specialText}>
+                Ear-Nose-Throat (ENT) Specialist
+              </Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('Pressed !!!');
+                }}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.gynoIcon} />
+              <Text style={styles.specialText}>Gynecologist/Obstetrician</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('Pressed !!!');
+                }}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.docTypeWrapper}>
+              <Image source={Icons.neuroIcon} />
+              <Text style={styles.specialText}>Neurologist</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('Pressed !!!');
+                }}>
+                <Image source={Icons.goIcon} />
+              </TouchableOpacity>
+            </View>
+          </View> */}
       </>
     );
   }

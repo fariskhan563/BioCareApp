@@ -89,8 +89,11 @@ export default StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     marginTop: 20,
+    display: 'flex',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 40,
   },
   docTypeWrapper: {
     width: '85%',
@@ -99,9 +102,13 @@ export default StyleSheet.create({
     paddingBottom: 12,
     paddingTop: 12,
     display: 'flex',
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  doccatImg: {
+    marginLeft: 20,
   },
   specialText: {
     color: '#000',

@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 //Screens
+import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Offers from '../screens/Offer';
 import FindAndBook from '../screens/FindAndBook';
@@ -18,10 +19,11 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Profile"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}>
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Offer" component={Offers} />
         <Stack.Screen name="FindBook" component={FindAndBook} />

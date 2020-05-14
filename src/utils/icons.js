@@ -28,4 +28,9 @@ export default {
   goIconBig: require('../assets/icons/goIconBig.png'),
   LeftDateIcon: require('../assets/icons/leftdatechange.png'),
   RightDateIcon: require('../assets/icons/rightdatechange.png'),
+  homeIcon: require('../assets/icons/homeIcon.png'),
+  pharmacyIcon: require('../assets/icons/pharmacyIcon.png'),
+  recordsIcon: require('../assets/icons/recordsIcon.png'),
+  videoIcon: require('../assets/icons/videoIcon.png'),
+  searchHomeIcon: require('../assets/icons/searchHomeIcon.png'),
 };

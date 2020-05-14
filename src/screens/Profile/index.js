@@ -22,7 +22,10 @@ class Profile extends Component {
             style={styles.upperCont}>
             <View style={styles.upperWrapper}>
               <View style={styles.backIconWrapper}>
-                <Image source={Icons.BackIcon} />
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.goBack()}>
+                  <Image source={Icons.BackIcon} />
+                </TouchableOpacity>
               </View>
               <View style={styles.imageWrapper}>
                 <Image source={Images.Profile} style={styles.image} />

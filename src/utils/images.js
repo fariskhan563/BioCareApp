@@ -7,4 +7,12 @@ export default {
   doc_2: require('../assets/images/doc_2.png'),
   doc_3: require('../assets/images/doc_3.png'),
   doc_4: require('../assets/images/doc_4.png'),
+  DocHomeImg: require('../assets/images/docHomeImg.png'),
+  MedicineHomeImg: require('../assets/images/medicineHomeImg.png'),
+  DiagnosticHomeImg: require('../assets/images/diagnosticHomeImg.png'),
+  doc1Img: require('../assets/images/doc1.png'),
+  doc2Img: require('../assets/images/doc2.png'),
+  starImg: require('../assets/images/starImg.png'),
+  userFemale: require('../assets/images/userImageFemale.png'),
+  
 };

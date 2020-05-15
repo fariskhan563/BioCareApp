@@ -32,4 +32,9 @@ export default {
   moneyIcon: require('../assets/icons/moneyIcon.png'),
   docDetail: require('../assets/icons/nodocIcon.png'),
   filterIcon: require('../assets/icons/filterIcon.png'),
+  homeIcon: require('../assets/icons/homeIcon.png'),
+  pharmacyIcon: require('../assets/icons/pharmacyIcon.png'),
+  recordsIcon: require('../assets/icons/recordsIcon.png'),
+  videoIcon: require('../assets/icons/videoIcon.png'),
+  searchHomeIcon: require('../assets/icons/searchHomeIcon.png'),
 };

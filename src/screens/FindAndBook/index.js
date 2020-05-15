@@ -26,28 +26,28 @@ const doctors = [
     doc_text: 'Doctors',
     doc_image: Icons.doctorIcon,
     doc_sub_text: 'Ophthalmologist, Dermatologist, etc.',
-    screenName: '',
+    screenName: 'DoctorCategory',
   },
   {
     doc_id: '2',
     doc_text: 'Dentists',
     doc_image: Icons.dentistIcon,
     doc_sub_text: 'Dentist, Prosthodontist, etc.',
-    screenName: '',
+    screenName: 'DoctorCategory',
   },
   {
     doc_id: '3',
     doc_text: 'Alternative Medicine Doctors',
     doc_image: Icons.alternatedocIcon,
     doc_sub_text: 'Ayurveda, Homeopath, etc.',
-    screenName: '',
+    screenName: 'DoctorCategory',
   },
   {
     doc_id: '4',
     doc_text: 'Therapists & Nutritionists',
     doc_image: Icons.therapistIcon,
     doc_sub_text: 'Acupuncturist, Physiotherapist, etc.',
-    screenName: '',
+    screenName: 'DoctorCategory',
   },
 ];
 
@@ -103,7 +103,10 @@ class FindAndBook extends Component {
                     <Text style={styles.docText}>{item.doc_text}</Text>
                     <Text style={styles.docSubText}>{item.doc_sub_text}</Text>
                   </View>
-                  <TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate(item.screenName)
+                    }>
                     <Image style={styles.nextbtn} source={Icons.goIcon} />
                   </TouchableOpacity>
                 </View>

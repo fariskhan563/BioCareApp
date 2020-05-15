@@ -100,7 +100,7 @@ class FindAndBook extends Component {
                   <TouchableOpacity
                     activeOpacity={1}
                     onPress={() =>
-                      this.props.navigation.navigate('DocDetailedCategory')
+                      this.props.navigation.navigate('FindBook')
                     }>
                     <Image source={Images.DocHomeImg} />
                   </TouchableOpacity>

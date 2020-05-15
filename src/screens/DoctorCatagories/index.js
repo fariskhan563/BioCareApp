@@ -14,19 +14,19 @@ const doctors = [
     cat_id: '1',
     cat_img: Icons.opthaIcon,
     cat_name: 'Opthamologist',
-    screenName: 'TimeSlot1',
+    screenName: 'DocDetailedCategory',
   },
   {
     cat_id: '2',
     cat_img: Icons.dermoIcon,
     cat_name: 'Dermatologist',
-    screenName: 'TimeSlot2',
+    screenName: 'DocDetailedCategory',
   },
   {
     cat_id: '3',
     cat_img: Icons.cardioIcon,
     cat_name: 'Cardiologist',
-    screenName: 'TimeSlot3',
+    screenName: 'DocDetailedCategory',
   },
   {
     cat_id: '4',
@@ -38,25 +38,25 @@ const doctors = [
     cat_id: '5',
     cat_img: Icons.pychoIcon,
     cat_name: 'Psychiatrist',
-    screenName: '',
+    screenName: 'DocDetailedCategory',
   },
   {
     cat_id: '6',
     cat_img: Icons.earIcon,
     cat_name: 'Ear-Nose-Throat (ENT) Specialist',
-    screenName: '',
+    screenName: 'DocDetailedCategory',
   },
   {
     cat_id: '7',
     cat_img: Icons.gynoIcon,
     cat_name: 'Gynecologist/Obstetricia',
-    screenName: '',
+    screenName: 'DocDetailedCategory',
   },
   {
     cat_id: '8',
     cat_img: Icons.neuroIcon,
     cat_name: 'Neurologist',
-    screenName: '',
+    screenName: 'DocDetailedCategory',
   },
 ];
 

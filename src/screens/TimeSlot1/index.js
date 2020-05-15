@@ -75,7 +75,10 @@ class TimeSlot1 extends Component {
                 </Text>
               </LinearGradient>
               <Text style={[styles.description, {marginTop: 20}]}>OR</Text>
-              <Image source={Icons.goIconBig} style={{marginTop: 20}} />
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('TimeSlot2')}>
+                <Image source={Icons.goIconBig} style={{marginTop: 15}} />
+              </TouchableOpacity>
             </View>
           </View>
         </View>

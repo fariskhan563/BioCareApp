@@ -140,7 +140,7 @@ class TimeSlot2 extends Component {
                 style={styles.bookTextbtnWrapper}>
                 <TouchableOpacity
                   activeOpacity={1}
-                  onPress={() => alert('Book Pressed')}>
+                  onPress={() => this.props.navigation.navigate('TimeSlot3')}>
                   <Text style={[styles.bookTextbtn, {color: '#ffffff'}]}>
                     Book
                   </Text>

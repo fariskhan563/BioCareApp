@@ -97,7 +97,13 @@ class FindAndBook extends Component {
             <View style={styles.iconSliderWrapper}>
               <View style={styles.iconItemsWrapper}>
                 <View style={styles.sliderItemWrapper}>
-                  <Image source={Images.DocHomeImg} />
+                  <TouchableOpacity
+                    activeOpacity={1}
+                    onPress={() =>
+                      this.props.navigation.navigate('DocDetailedCategory')
+                    }>
+                    <Image source={Images.DocHomeImg} />
+                  </TouchableOpacity>
                   <Text style={styles.itemText}>Doctor</Text>
                   <Text style={styles.subText}>Search doctor around you</Text>
                 </View>

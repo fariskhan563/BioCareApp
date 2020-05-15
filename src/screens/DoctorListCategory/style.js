@@ -284,4 +284,20 @@ export default StyleSheet.create({
   btnText: {
     fontWeight: 'bold',
   },
+  filterBtnWrapper: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 12,
+    backgroundColor: '#fff',
+    borderRadius: 50,
+    padding: 25,
+    elevation: 2,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    width: width * 0.2,
+    height: height * 0.12,
+    marginBottom: 15,
+  },
 });

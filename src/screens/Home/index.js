@@ -1,13 +1,76 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity, FlatList} from 'react-native';
-
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+  Dimensions,
+  Animated,
+} from 'react-native';
+const {width} = Dimensions.get('window');
 import styles from './style';
 
 import {Icons, Images} from '../../utils';
 
 //Libraries
 import LinearGradient from 'react-native-linear-gradient';
-import {TextInput} from 'react-native-gesture-handler';
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+
+const iconItems = [
+  {
+    id: '1',
+    image: Images.DocHomeImg,
+    title: 'Doctor',
+    desc: 'Search doctor around you',
+    screen: 'FindBook',
+  },
+  {
+    id: '2',
+    image: Images.MedicineHomeImg,
+    title: 'Medicines',
+    desc: 'Order medicine home',
+    screen: 'FindBook',
+  },
+  {
+    id: '3',
+    image: Images.DiagnosticHomeImg,
+    title: 'Diagnostic',
+    desc: 'Book test at doorstep',
+    screen: 'FindBook',
+  },
+  {
+    id: '4',
+    image: Images.DocHomeImg,
+    title: 'Doctor',
+    desc: 'Search doctor around you',
+    screen: 'FindBook',
+  },
+  {
+    id: '5',
+    image: Images.MedicineHomeImg,
+    title: 'Doctor',
+    desc: 'Search doctor around you',
+    screen: 'FindBook',
+  },
+  {
+    id: '6',
+    image: Images.DiagnosticHomeImg,
+    title: 'Doctor',
+    desc: 'Search doctor around you',
+    screen: 'FindBook',
+  },
+];
+
+const dots = [
+  {
+    id: '1',
+  },
+  {
+    id: '2',
+  },
+];
 
 const banners = [
   {
@@ -56,7 +119,41 @@ const doctors = [
 ];
 
 class FindAndBook extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      myText: "I'm ready to get swiped!",
+      gestureName: 'none',
+      backgroundColor: '#fff',
+    };
+  }
+
+  onSwipeLeft(gestureState) {
+    this.setState({myText: 'You swiped left!'});
+  }
+
+  onSwipeRight(gestureState) {
+    this.setState({myText: 'You swiped right!'});
+  }
+
+  onSwipe(gestureName, gestureState) {
+    const {SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
+    this.setState({gestureName: gestureName});
+    switch (gestureName) {
+      case SWIPE_LEFT:
+        this.setState({backgroundColor: 'blue'});
+        break;
+      case SWIPE_RIGHT:
+        this.setState({backgroundColor: 'yellow'});
+        break;
+    }
+  }
+
+  scrollX = new Animated.Value(0); // this will be the scroll location of our ScrollView
+
   render() {
+    let position = Animated.divide(this.scrollX, width);
+
     return (
       <>
         <View style={styles.container}>
@@ -95,34 +192,63 @@ class FindAndBook extends Component {
               </View>
             </LinearGradient>
             <View style={styles.iconSliderWrapper}>
-              <View style={styles.iconItemsWrapper}>
-                <View style={styles.sliderItemWrapper}>
-                  <TouchableOpacity
-                    activeOpacity={1}
-                    onPress={() =>
-                      this.props.navigation.navigate('FindBook')
-                    }>
-                    <Image source={Images.DocHomeImg} />
-                  </TouchableOpacity>
-                  <Text style={styles.itemText}>Doctor</Text>
-                  <Text style={styles.subText}>Search doctor around you</Text>
-                </View>
-                <View style={styles.sliderItemWrapper}>
-                  <Image source={Images.MedicineHomeImg} />
-                  <Text style={styles.itemText}>Medicines</Text>
-                  <Text style={styles.subText}>Order medicine to home</Text>
-                </View>
-                <View style={styles.sliderItemWrapper}>
-                  <Image source={Images.DiagnosticHomeImg} />
-                  <Text style={styles.itemText}>Diagnostic</Text>
-                  <Text style={styles.subText}>Book test at doorstep</Text>
-                </View>
-              </View>
+              <FlatList
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                data={iconItems}
+                pagingEnabled={true}
+                // the onScroll prop will pass a nativeEvent object to a function
+                onScroll={Animated.event(
+                  // Animated.event returns a function that takes an array where the first element...
+                  [{nativeEvent: {contentOffset: {x: this.scrollX}}}], // ... is an object that maps any nativeEvent prop to a variable
+                )} // in this case we are mapping the value of nativeEvent.contentOffset.x to this.scrollX
+                scrollEventThrottle={16} // this will ensure that this ScrollView's onScroll prop is called no faster than 16ms between each function call
+                renderItem={({item}) => (
+                  <View style={styles.iconItemsWrapper}>
+                    <View style={styles.sliderItemWrapper}>
+                      <TouchableOpacity
+                        activeOpacity={1}
+                        onPress={() =>
+                          this.props.navigation.navigate(item.screen)
+                        }
+                        style={styles.itemImgWrapper}>
+                        <Image source={item.image} style={styles.itemImg} />
+                      </TouchableOpacity>
+                      <Text style={styles.itemText}>{item.title}</Text>
+                      <Text style={styles.subText}>{item.desc}</Text>
+                    </View>
+                  </View>
+                )}
+                keyExtractor={item => item.id}
+              />
+
               <View style={styles.scrollIndicatorWrapper}>
-                <View style={styles.scrollIndicatorBig} />
+                {dots.map((_, i) => {
+                  // the _ just means we won't use that parameter
+                  let opacity = position.interpolate({
+                    inputRange: [i - 1, i, i + 1], // each dot will need to have an opacity of 1 when position is equal to their index (i)
+                    outputRange: [0.3, 1, 0.3], // when position is not i, the opacity of the dot will animate to 0.3
+                    // inputRange: [i - 0.50000000001, i - 0.5, i, i + 0.5, i + 0.50000000001], // only when position is ever so slightly more than +/- 0.5 of a dot's index
+                    // outputRange: [0.3, 1, 1, 1, 0.3], // is when the opacity changes from 1 to 0.3
+                    extrapolate: 'clamp', // this will prevent the opacity of the dots from going outside of the outputRange (i.e. opacity will not be less than 0.3)
+                  });
+                  return (
+                    <Animated.View // we will animate the opacity of the dots so use Animated.View instead of View here
+                      key={i} // we will use i for the key because no two (or more) elements in an array will have the same index
+                      style={{
+                        opacity,
+                        height: 8,
+                        width: 8,
+                        backgroundColor: '#5588E7',
+                        margin: 8,
+                        borderRadius: 5,
+                      }}
+                    />
+                  );
+                })}
+                {/* <View style={styles.scrollIndicatorBig} />
                 <View style={styles.scrollIndicatorSmall} />
-                <View style={styles.scrollIndicatorSmall} />
-                <View style={styles.scrollIndicatorSmall} />
+                <View style={styles.scrollIndicatorSmall} /> */}
               </View>
             </View>
           </View>
@@ -132,8 +258,8 @@ class FindAndBook extends Component {
               showsHorizontalScrollIndicator={false}
               data={banners}
               renderItem={({item}) => (
-                <View style={{marginLeft: 20}}>
-                  <Image source={item.image} />
+                <View style={styles.bannerImgWrapper}>
+                  <Image source={item.image} style={styles.bannerImg} />
                 </View>
               )}
               keyExtractor={item => item.id}
@@ -165,7 +291,7 @@ class FindAndBook extends Component {
                   <View style={styles.docItemLower}>
                     <View style={styles.docItemLowerShadowWrap}>
                       <View style={styles.docItemLowerWrap}>
-                        <Text style={[styles.docName, {marginTop: 15}]}>
+                        <Text style={[styles.docName, {marginTop: 0}]}>
                           {item.doc_name}
                         </Text>
                         <View style={styles.docDescWrapper}>
@@ -188,32 +314,6 @@ class FindAndBook extends Component {
               )}
               keyExtractor={item => item.id}
             />
-          </View>
-          <View style={styles.bottomTabWrapper}>
-            <View style={styles.tabWrapper}>
-              <View style={styles.singleTabWrapper}>
-                <Image source={Icons.homeIcon} style={{marginTop: 10}} />
-                <Text
-                  style={[
-                    styles.tabText,
-                    {marginTop: 6, color: 'rgb(85,136,231)'},
-                  ]}>
-                  Home
-                </Text>
-              </View>
-              <View style={styles.singleTabWrapper}>
-                <Image source={Icons.pharmacyIcon} style={{marginTop: 10}} />
-                <Text style={[styles.tabText, {marginTop: 6}]}>Pharmacy</Text>
-              </View>
-              <View style={styles.singleTabWrapper}>
-                <Image source={Icons.recordsIcon} style={{marginTop: 10}} />
-                <Text style={[styles.tabText, {marginTop: 6}]}>Records</Text>
-              </View>
-              <View style={styles.singleTabWrapper}>
-                <Image source={Icons.videoIcon} style={{marginTop: 10}} />
-                <Text style={[styles.tabText, {marginTop: 6}]}>Video</Text>
-              </View>
-            </View>
           </View>
         </View>
       </>

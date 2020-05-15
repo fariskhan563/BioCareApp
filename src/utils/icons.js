@@ -36,5 +36,9 @@ export default {
   pharmacyIcon: require('../assets/icons/pharmacyIcon.png'),
   recordsIcon: require('../assets/icons/recordsIcon.png'),
   videoIcon: require('../assets/icons/videoIcon.png'),
+  homeIcon2: require('../assets/icons/homeIcon2.png'),
+  pharmacyIcon2: require('../assets/icons/pharmacyIcon2.png'),
+  recordsIcon2: require('../assets/icons/recordsIcon2.png'),
+  videoIcon2: require('../assets/icons/videoIcon2.png'),
   searchHomeIcon: require('../assets/icons/searchHomeIcon.png'),
 };

@@ -107,12 +107,12 @@ export default StyleSheet.create({
     left: '0%',
     right: '0%',
     top: '25.22%',
-    bottom: '34%',
+    bottom: '26%',
   },
 
   docDetailedWrapper: {
     width: width * 0.8,
-    height: height * 0.4,
+    height: height * 0.48,
     backgroundColor: '#ffffff',
     // marginTop: height * 0.27,
     paddingBottom: 35,

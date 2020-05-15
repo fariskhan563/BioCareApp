@@ -79,12 +79,12 @@ export default StyleSheet.create({
     left: '9.25%',
     right: '9.73%',
     top: '14.22%',
-    bottom: '64.83%',
+    bottom: '63%',
   },
 
   iconItemsWrapper: {
-    width: '100%',
-    height: '90%',
+    width: width * 0.27,
+    height: '98%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -92,11 +92,24 @@ export default StyleSheet.create({
   },
 
   sliderItemWrapper: {
-    width: '29%',
+    width: '100%',
     height: '100%',
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+
+  itemImgWrapper: {
+    width: width * 0.18,
+    height: width * 0.18,
+    borderRadius: 50,
+    elevation: 1,
+  },
+
+  itemImg: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 50,
   },
 
   scrollIndicatorWrapper: {
@@ -125,12 +138,30 @@ export default StyleSheet.create({
   },
 
   BannerWrapper: {
-    marginTop: height * 0.37,
+    width,
+    height: height * 0.16,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginTop: height * 0.38,
+  },
+
+  bannerImgWrapper: {
+    width: width * 0.75,
+    height: '100%',
+    marginLeft: width * 0.05,
+    borderRadius: 10,
+  },
+
+  bannerImg: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
   },
 
   docHeadingWrapper: {
     width,
-    height: height * 0.05,
+    height: height * 0.04,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -153,12 +184,12 @@ export default StyleSheet.create({
 
   docItemWrapper: {
     width: width * 0.35,
-    height: height * 0.26,
+    height: height * 0.24,
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
     marginLeft: width * 0.05,
-    marginTop: height * 0.02,
+    marginTop: height * 0.01,
   },
 
   docItemUpper: {
@@ -170,7 +201,7 @@ export default StyleSheet.create({
 
   docItemLower: {
     width: '100%',
-    height: height * 0.21,
+    height: height * 0.19,
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -227,8 +258,8 @@ export default StyleSheet.create({
     position: 'absolute',
     left: '0%',
     right: '0%',
-    top: '88.21%',
-    bottom: '-8.99%',
+    top: '85.21%',
+    bottom: '-9.99%',
     backgroundColor: '#ffffff',
     borderRadius: 5,
     borderRadius: 30,
@@ -272,9 +303,9 @@ export default StyleSheet.create({
   itemText: {
     fontFamily: 'Helvetica Neue',
     color: '#000',
-    fontSize: 15,
+    fontSize: width * 0.038,
     textAlign: 'center',
-    marginTop: height * 0.01,
+    marginTop: height * 0.005,
   },
 
   docText: {
@@ -286,7 +317,7 @@ export default StyleSheet.create({
   subText: {
     fontFamily: 'Helvetica Neue',
     color: '#8A9DA2',
-    fontSize: 12,
+    fontSize: width * 0.032,
     textAlign: 'center',
   },
 
@@ -294,7 +325,7 @@ export default StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: 13,
+    fontSize: width * 0.04,
     lineHeight: 14,
     textAlign: 'center',
     color: '#333333',
@@ -304,8 +335,8 @@ export default StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     fontStyle: 'normal',
     fontWeight: 'normal',
-    fontSize: 12,
-    lineHeight: 11,
+    fontSize: width * 0.03,
+    lineHeight: 13,
     textAlign: 'center',
     color: '#898A8F',
   },

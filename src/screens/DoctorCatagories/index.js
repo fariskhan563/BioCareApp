@@ -32,7 +32,7 @@ const doctors = [
     cat_id: '4',
     cat_img: Icons.gastroIcon,
     cat_name: 'Gastroenterologist',
-    screenName: '',
+    screenName: 'DocDetailedCategory',
   },
   {
     cat_id: '5',

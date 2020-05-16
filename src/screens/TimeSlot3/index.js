@@ -28,30 +28,29 @@ class TimeSlot3 extends Component {
                     <Image source={Icons.BackIcon} />
                   </TouchableOpacity>
                 </View>
-                <View style={styles.imageWrapper}>
+                <View style={styles.titleWrapper}>
                   <Text style={styles.uName}>Select a time slot</Text>
                 </View>
                 <TouchableOpacity
+                  activeOpacity={1}
+                  style={styles.settingIconWrapper}
                   onPress={() => {
-                    alert('Cities');
+                    alert('Pressed !!!');
                   }}>
-                  <View style={styles.dropdownWrapper}>
-                    <Text style={styles.dropdownSelectedText}>South Delhi</Text>
-                    <Image
-                      style={styles.dropdownImg}
-                      source={Icons.dropDownIcon}
-                    />
-                  </View>
+                  <Text style={styles.dropName}>South Delhi</Text>
+                  <Image source={Icons.dropDownIcon} />
                 </TouchableOpacity>
               </View>
             </LinearGradient>
             <View style={styles.cardWrapper}>
-              <View style={styles.docSpecsWrapper}>
-                <Image style={styles.docImage} source={Images.Profile2} />
-                <View style={styles.docNameSpecsText}>
-                  <Text style={styles.docNameText}>Dr. John Terry</Text>
-                  <Text style={styles.docSubNameText}>
-                    B.Sc, MBBS, DDVL, MD- Dermitologist
+              <View style={styles.boxUpper}>
+                <View style={styles.imageWrapper}>
+                  <Image source={Images.Profile} style={styles.image} />
+                </View>
+                <View style={styles.boxInfo}>
+                  <Text style={styles.title}>Dr. John Terry</Text>
+                  <Text style={styles.description}>
+                    B.Sc, MBBS, DDVL, MD-Dermatologist
                   </Text>
                 </View>
               </View>
@@ -95,9 +94,15 @@ class TimeSlot3 extends Component {
                 end={{x: 0.3, y: 1.9}}
                 locations={[0.1, 0.6]}
                 style={styles.bookTextbtnWrapper}>
-                <Text style={[styles.bookTextbtn, {color: '#ffffff'}]}>
-                  Book
-                </Text>
+                <TouchableOpacity
+                  activeOpacity={1}
+                  style={styles.bookBtn}
+                  // onPress={() => this.props.navigation.navigate('ClinicalScreen')}
+                >
+                  <Text style={[styles.bookTextbtn, {color: '#ffffff'}]}>
+                    Book
+                  </Text>
+                </TouchableOpacity>
               </LinearGradient>
             </View>
           </View>

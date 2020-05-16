@@ -113,54 +113,6 @@ class FindAndBook extends Component {
               )}
               keyExtractor={item => item.doc_id}
             />
-            {/* <View style={styles.DocSpecsWrapper}>
-              <Image style={styles.docImg} source={Icons.doctorIcon} />
-              <View style={styles.docTextWrapper}>
-                <Text style={styles.docText}>Doctors</Text>
-                <Text style={styles.docSubText}>
-                  Ophthalmologist, Dermatologist, etc.
-                </Text>
-              </View>
-              <TouchableOpacity>
-                <Image style={styles.nextbtn} source={Icons.goIcon} />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.DocSpecsWrapper}>
-              <Image style={styles.docImg} source={Icons.dentistIcon} />
-              <View style={styles.docTextWrapper}>
-                <Text style={styles.docText}>Dentists</Text>
-                <Text style={styles.docSubText}>
-                  Dentist, Prosthodontist, etc. {'               '}
-                </Text>
-              </View>
-              <TouchableOpacity>
-                <Image style={styles.nextbtn} source={Icons.goIcon} />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.DocSpecsWrapper}>
-              <Image style={styles.docImg} source={Icons.alternatedocIcon} />
-              <View style={styles.docTextWrapper}>
-                <Text style={styles.docText}>Alternative Medicine Doctors</Text>
-                <Text style={styles.docSubText}>
-                  Ayurveda, Homeopath, etc. {'               '}
-                </Text>
-              </View>
-              <TouchableOpacity>
-                <Image style={styles.nextbtn} source={Icons.goIcon} />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.DocSpecsWrapper}>
-              <Image style={styles.docImg} source={Icons.therapistIcon} />
-              <View style={styles.docTextWrapper}>
-                <Text style={styles.docText}>Therapists & Nutritionists</Text>
-                <Text style={styles.docSubText}>
-                  Acupuncturist, Physiotherapist, etc.
-                </Text>
-              </View>
-              <TouchableOpacity>
-                <Image style={styles.nextbtn} source={Icons.goIcon} />
-              </TouchableOpacity>
-            </View> */}
           </View>
         </View>
       </>

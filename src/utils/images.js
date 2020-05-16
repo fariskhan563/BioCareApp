@@ -14,5 +14,7 @@ export default {
   doc2Img: require('../assets/images/doc2.png'),
   starImg: require('../assets/images/starImg.png'),
   userFemale: require('../assets/images/userImageFemale.png'),
-  
+  clinicalBg: require('../assets/images/clinicalBg.png'),
+  starGroup: require('../assets/images/starGroup.png'),
+  mapImage: require('../assets/images/mapImage.png'),
 };

@@ -20,42 +20,42 @@ import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 const iconItems = [
   {
-    id: '1',
+    cat_id: '1',
     image: Images.DocHomeImg,
     title: 'Doctor',
     desc: 'Search doctor around you',
     screen: 'FindBook',
   },
   {
-    id: '2',
+    cat_id: '2',
     image: Images.MedicineHomeImg,
     title: 'Medicines',
     desc: 'Order medicine home',
     screen: 'FindBook',
   },
   {
-    id: '3',
+    cat_id: '3',
     image: Images.DiagnosticHomeImg,
     title: 'Diagnostic',
     desc: 'Book test at doorstep',
     screen: 'FindBook',
   },
   {
-    id: '4',
+    cat_id: '4',
     image: Images.DocHomeImg,
     title: 'Doctor',
     desc: 'Search doctor around you',
     screen: 'FindBook',
   },
   {
-    id: '5',
+    cat_id: '5',
     image: Images.MedicineHomeImg,
     title: 'Doctor',
     desc: 'Search doctor around you',
     screen: 'FindBook',
   },
   {
-    id: '6',
+    cat_id: '6',
     image: Images.DiagnosticHomeImg,
     title: 'Doctor',
     desc: 'Search doctor around you',
@@ -65,24 +65,24 @@ const iconItems = [
 
 const dots = [
   {
-    id: '1',
+    b_id: '1',
   },
   {
-    id: '2',
+    b_id: '2',
   },
 ];
 
 const banners = [
   {
-    id: '1',
+    banner_id: '1',
     image: Images.Banner2,
   },
   {
-    id: '2',
+    banner_id: '2',
     image: Images.Banner1,
   },
   {
-    id: '3',
+    banner_id: '3',
     image: Images.Banner2,
   },
 ];
@@ -219,7 +219,7 @@ class FindAndBook extends Component {
                     </View>
                   </View>
                 )}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.cat_id}
               />
 
               <View style={styles.scrollIndicatorWrapper}>
@@ -262,7 +262,7 @@ class FindAndBook extends Component {
                   <Image source={item.image} style={styles.bannerImg} />
                 </View>
               )}
-              keyExtractor={item => item.id}
+              keyExtractor={item => item.banner_id}
             />
           </View>
           <View style={styles.docHeadingWrapper}>

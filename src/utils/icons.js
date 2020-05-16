@@ -41,4 +41,6 @@ export default {
   recordsIcon2: require('../assets/icons/recordsIcon2.png'),
   videoIcon2: require('../assets/icons/videoIcon2.png'),
   searchHomeIcon: require('../assets/icons/searchHomeIcon.png'),
+  FilterWhiteIcon: require('../assets/icons/filterWIcon.png'),
+  CloseIcon: require('../assets/icons/closeIcon.png'),
 };

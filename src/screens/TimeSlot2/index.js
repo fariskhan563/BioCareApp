@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 
 import styles from './style';
 
@@ -27,30 +27,29 @@ class TimeSlot2 extends Component {
                     <Image source={Icons.BackIcon} />
                   </TouchableOpacity>
                 </View>
-                <View style={styles.imageWrapper}>
+                <View style={styles.titleWrapper}>
                   <Text style={styles.uName}>Select a time slot</Text>
                 </View>
                 <TouchableOpacity
+                  activeOpacity={1}
+                  style={styles.settingIconWrapper}
                   onPress={() => {
-                    alert('Cities');
+                    alert('Pressed !!!');
                   }}>
-                  <View style={styles.dropdownWrapper}>
-                    <Text style={styles.dropdownSelectedText}>South Delhi</Text>
-                    <Image
-                      style={styles.dropdownImg}
-                      source={Icons.dropDownIcon}
-                    />
-                  </View>
+                  <Text style={styles.dropName}>South Delhi</Text>
+                  <Image source={Icons.dropDownIcon} />
                 </TouchableOpacity>
               </View>
             </LinearGradient>
             <View style={styles.cardWrapper}>
-              <View style={styles.docSpecsWrapper}>
-                <Image style={styles.docImage} source={Images.Profile2} />
-                <View style={styles.docNameSpecsText}>
-                  <Text style={styles.docNameText}>Dr. John Terry</Text>
-                  <Text style={styles.docSubNameText}>
-                    B.Sc, MBBS, DDVL, MD- Dermitologist
+              <View style={styles.boxUpper}>
+                <View style={styles.imageWrapper}>
+                  <Image source={Images.Profile} style={styles.image} />
+                </View>
+                <View style={styles.boxInfo}>
+                  <Text style={styles.title}>Dr. John Terry</Text>
+                  <Text style={styles.description}>
+                    B.Sc, MBBS, DDVL, MD-Dermatologist
                   </Text>
                 </View>
               </View>
@@ -70,61 +69,68 @@ class TimeSlot2 extends Component {
                   />
                 </TouchableOpacity>
               </View>
-              <View style={styles.timecardWrapper}>
-                <LinearGradient
-                  colors={['#FFFB91', '#FF9FFF']}
-                  start={{x: 0.1, y: 0.1}}
-                  end={{x: 0.3, y: 1.9}}
-                  locations={[0.1, 0.6]}
-                  style={styles.morningTextbtnWrapper}>
-                  <Text style={[styles.morningTextbtn, {color: '#000'}]}>
-                    Morning
-                  </Text>
-                </LinearGradient>
-                <View style={styles.timeseqWrapper}>
-                  <Text style={styles.timeText}>10.00</Text>
-                  <Text style={styles.timeText}>11.00</Text>
-                  <Text style={styles.timeText}>12.00</Text>
+
+              <ScrollView
+                contentContainerStyle={styles.scrollWrapper}
+                showsVerticalScrollIndicator={false}>
+                <View style={styles.timecardWrapper}>
+                  <LinearGradient
+                    colors={['#FFFB91', '#FF9FFF']}
+                    start={{x: 0.1, y: 0.1}}
+                    end={{x: 0.3, y: 1.9}}
+                    locations={[0.1, 0.6]}
+                    style={styles.morningTextbtnWrapper}>
+                    <Text style={[styles.morningTextbtn, {color: '#000'}]}>
+                      Morning
+                    </Text>
+                  </LinearGradient>
+                  <View style={styles.timeseqWrapper}>
+                    <Text style={styles.timeText}>10.00</Text>
+                    <Text style={styles.timeText}>11.00</Text>
+                    <Text style={styles.timeText}>12.00</Text>
+                  </View>
                 </View>
-              </View>
-              <View style={styles.timecardWrapper}>
-                <LinearGradient
-                  colors={['#E0CCFF', '#C1FFF1']}
-                  start={{x: 0.1, y: 0.1}}
-                  end={{x: 0.3, y: 1.9}}
-                  locations={[0.1, 0.6]}
-                  style={styles.morningTextbtnWrapper}>
-                  <Text style={[styles.morningTextbtn, {color: '#000'}]}>
-                    Afternoon
-                  </Text>
-                </LinearGradient>
-                <View style={styles.timeseqWrapper}>
-                  <Text style={styles.timeText}>12.00</Text>
-                  <Text style={styles.timeText}>01.00</Text>
-                  <Text style={styles.timeText}>02.00</Text>
-                  <Text style={styles.timeText}>03.00</Text>
-                  <Text style={styles.timeText}>04.00</Text>
+                <View style={styles.timecardWrapper}>
+                  <LinearGradient
+                    colors={['#E0CCFF', '#C1FFF1']}
+                    start={{x: 0.1, y: 0.1}}
+                    end={{x: 0.3, y: 1.9}}
+                    locations={[0.1, 0.6]}
+                    style={styles.morningTextbtnWrapper}>
+                    <Text style={[styles.morningTextbtn, {color: '#000'}]}>
+                      Afternoon
+                    </Text>
+                  </LinearGradient>
+                  <View style={styles.timeseqWrapper}>
+                    <Text style={styles.timeText}>12.00</Text>
+                    <Text style={styles.timeText}>01.00</Text>
+                    <Text style={styles.timeText}>02.00</Text>
+                    <Text style={styles.timeText}>03.00</Text>
+                  </View>
                 </View>
-              </View>
-              <View style={styles.timecardWrapper}>
-                <LinearGradient
-                  colors={['#90E4FF', '#9FFFF5']}
-                  start={{x: 0.1, y: 0.1}}
-                  end={{x: 0.3, y: 1.9}}
-                  locations={[0.1, 0.6]}
-                  style={styles.morningTextbtnWrapper}>
-                  <Text style={[styles.morningTextbtn, {color: '#000'}]}>
-                    Evening & Night
-                  </Text>
-                </LinearGradient>
-                <View style={styles.timeseqWrapper}>
-                  <Text style={styles.timeText}>05.00</Text>
-                  <Text style={styles.timeText}>06.00</Text>
-                  <Text style={styles.timeText}>07.00</Text>
-                  <Text style={styles.timeText}>08.00</Text>
-                  <Text style={styles.timeText}>09.00</Text>
+                <View style={styles.timecardWrapperBig}>
+                  <LinearGradient
+                    colors={['#90E4FF', '#9FFFF5']}
+                    start={{x: 0.1, y: 0.1}}
+                    end={{x: 0.3, y: 1.9}}
+                    locations={[0.1, 0.6]}
+                    style={styles.morningTextbtnWrapper}>
+                    <Text style={[styles.morningTextbtn, {color: '#000'}]}>
+                      Evening & Night
+                    </Text>
+                  </LinearGradient>
+                  <View style={styles.timeseqWrapper}>
+                    <Text style={styles.timeText}>05.00</Text>
+                    <Text style={styles.timeText}>06.00</Text>
+                    <Text style={styles.timeText}>07.00</Text>
+                    <Text style={styles.timeText}>03.00</Text>
+                  </View>
+                  <View style={styles.timeseqWrapperLast}>
+                    <Text style={styles.timeText}>05.00</Text>
+                    <Text style={styles.timeText}>06.00</Text>
+                  </View>
                 </View>
-              </View>
+              </ScrollView>
             </View>
             <View style={styles.bfbottomWrapper}>
               <TouchableOpacity
@@ -140,6 +146,7 @@ class TimeSlot2 extends Component {
                 style={styles.bookTextbtnWrapper}>
                 <TouchableOpacity
                   activeOpacity={1}
+                  style={styles.bookBtn}
                   onPress={() => this.props.navigation.navigate('TimeSlot3')}>
                   <Text style={[styles.bookTextbtn, {color: '#ffffff'}]}>
                     Book

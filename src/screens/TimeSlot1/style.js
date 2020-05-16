@@ -71,7 +71,7 @@ export default StyleSheet.create({
     left: '9.25%',
     right: '9.73%',
     top: '14.22%',
-    bottom: '28.83%',
+    bottom: '20.83%',
     backgroundColor: '#ffffff',
     shadowColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 20,
@@ -90,7 +90,7 @@ export default StyleSheet.create({
   },
 
   boxInfo: {
-    width: width * 0.3,
+    width: width * 0.45,
     height: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -159,8 +159,8 @@ export default StyleSheet.create({
   title: {
     fontFamily: 'Helvetica Neue',
     fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: width * 0.03,
+    fontWeight: 'bold',
+    fontSize: width * 0.04,
     lineHeight: 17,
     color: '#000000',
     marginTop: height * 0.01,
@@ -170,10 +170,20 @@ export default StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     fontStyle: 'normal',
     fontWeight: 'normal',
-    fontSize: width * 0.027,
+    fontSize: width * 0.035,
     lineHeight: 14,
     color: '#898A8F',
     marginTop: height * 0.01,
+  },
+
+  dateText: {
+    fontFamily: 'Helvetica Neue',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: width * 0.04,
+    lineHeight: 17,
+    color: '#000000',
+    marginRight: width * 0.14,
   },
 
   code: {
@@ -189,7 +199,7 @@ export default StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     fontStyle: 'normal',
     fontWeight: 'normal',
-    fontSize: width * 0.03,
+    fontSize: width * 0.035,
     lineHeight: 17,
     color: 'rgb(85,136,231)',
   },

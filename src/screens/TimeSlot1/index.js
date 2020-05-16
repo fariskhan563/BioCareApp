@@ -56,9 +56,7 @@ class TimeSlot1 extends Component {
             </View>
             <View style={styles.boxLower}>
               <View style={styles.dateBox}>
-                <Text style={([styles.title], {marginRight: 100})}>
-                  Today, 8 dec
-                </Text>
+                <Text style={styles.dateText}>Today, 8 dec</Text>
                 <Image source={Icons.goIconWhite} style={{marginRight: 10}} />
               </View>
               <Text style={[styles.description, {marginTop: 20}]}>

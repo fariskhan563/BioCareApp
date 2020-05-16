@@ -38,12 +38,12 @@ class Profile extends Component {
               <Text style={styles.uName}>Elizabeth</Text>
               <Text style={[styles.uNum, {marginTop: 3}]}>+91 78383540420</Text>
             </View>
-            <Text style={[styles.uNum, {marginTop: 6, marginBottom: 2}]}>
+            <Text style={[styles.uNum, {marginTop: 10, marginBottom: 2}]}>
               22%
             </Text>
             <ProgressBar
               progress={0.55}
-              width={300}
+              width={260}
               height={5}
               borderRadius={20}
               color={'#FFFFFF'}

@@ -21,6 +21,7 @@ import TimeSlot1 from '../screens/TimeSlot1';
 import TimeSlot2 from '../screens/TimeSlot2';
 import TimeSlot3 from '../screens/TimeSlot3';
 import DocDetailedCategory from '../screens/DoctorListCategory';
+import ClinicalScreen from '../screens/ClinicalScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -109,6 +110,7 @@ function Navigation() {
         <Stack.Screen name="TimeSlot1" component={TimeSlot1} />
         <Stack.Screen name="TimeSlot2" component={TimeSlot2} />
         <Stack.Screen name="TimeSlot3" component={TimeSlot3} />
+        <Stack.Screen name="ClinicalScreen" component={ClinicalScreen} />
         <Stack.Screen
           name="DocDetailedCategory"
           component={DocDetailedCategory}

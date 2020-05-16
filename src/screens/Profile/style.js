@@ -101,7 +101,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 50,
     borderColor: '#ffffff',
-    marginTop: height * 0.02,
+    marginTop: height * 0.013,
   },
 
   lowerCont: {

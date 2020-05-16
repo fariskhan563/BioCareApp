@@ -16,7 +16,6 @@ import {Icons, Images} from '../../utils';
 
 //Libraries
 import LinearGradient from 'react-native-linear-gradient';
-import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 const iconItems = [
   {
@@ -119,36 +118,6 @@ const doctors = [
 ];
 
 class FindAndBook extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      myText: "I'm ready to get swiped!",
-      gestureName: 'none',
-      backgroundColor: '#fff',
-    };
-  }
-
-  onSwipeLeft(gestureState) {
-    this.setState({myText: 'You swiped left!'});
-  }
-
-  onSwipeRight(gestureState) {
-    this.setState({myText: 'You swiped right!'});
-  }
-
-  onSwipe(gestureName, gestureState) {
-    const {SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
-    this.setState({gestureName: gestureName});
-    switch (gestureName) {
-      case SWIPE_LEFT:
-        this.setState({backgroundColor: 'blue'});
-        break;
-      case SWIPE_RIGHT:
-        this.setState({backgroundColor: 'yellow'});
-        break;
-    }
-  }
-
   scrollX = new Animated.Value(0); // this will be the scroll location of our ScrollView
 
   render() {
@@ -174,9 +143,12 @@ class FindAndBook extends Component {
                     style={{width: '100%', height: '100%', borderRadius: 50}}
                   />
                 </TouchableOpacity>
-                <View style={styles.userNameWrapper}>
+                <TouchableOpacity
+                  style={styles.userNameWrapper}
+                  activeOpacity={1}
+                  onPress={() => this.props.navigation.navigate('Profile')}>
                   <Text style={styles.uName}>Hi Elizabeth!</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.searchOptionWrapper}>
                   <Image source={Icons.searchHomeIcon} />
                   <TouchableOpacity

@@ -25,12 +25,12 @@ class ClinicalScreen extends Component {
               source={Images.clinicalBg}
               style={styles.upperCont}>
               <View style={styles.upperWrapper}>
-                <View style={styles.backIconWrapper}>
-                  <TouchableOpacity
-                    onPress={() => this.props.navigation.goBack()}>
-                    <Image source={Icons.BackIcon} />
-                  </TouchableOpacity>
-                </View>
+              <TouchableOpacity
+                  style={styles.backIconWrapper}
+                  activeOpacity={1}
+                  onPress={() => this.props.navigation.goBack()}>
+                  <Image source={Icons.BackIcon} />
+                </TouchableOpacity>
                 <View style={styles.titleWrapper}>
                   <Text style={styles.uName}>Select a time slot</Text>
                 </View>
@@ -125,8 +125,9 @@ class ClinicalScreen extends Component {
                 <TouchableOpacity
                   activeOpacity={1}
                   style={styles.bookBtn}
-                    onPress={() => this.props.navigation.navigate('TimeSlot1')}
-                >
+                  onPress={() =>
+                    this.props.navigation.navigate('DoctorScreen')
+                  }>
                   <Text style={[styles.bookTextbtn, {color: '#ffffff'}]}>
                     Book
                   </Text>

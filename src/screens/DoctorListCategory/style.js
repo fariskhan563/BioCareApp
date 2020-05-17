@@ -99,6 +99,17 @@ export default StyleSheet.create({
     fontWeight: '500',
   },
 
+  docContWrapper: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    position: 'absolute',
+    left: '0%',
+    right: '0%',
+    top: '26.5%',
+    bottom: '0%',
+  },
+
   docCont: {
     display: 'flex',
     justifyContent: 'flex-start',
@@ -106,8 +117,8 @@ export default StyleSheet.create({
     position: 'absolute',
     left: '0%',
     right: '0%',
-    top: '26.22%',
-    bottom: '34%',
+    top: '0%',
+    bottom: '46%',
   },
 
   docDetailedWrapper: {
@@ -321,7 +332,7 @@ export default StyleSheet.create({
 
   docCont2: {
     width,
-    marginTop: height * 0.66,
+    marginTop: height * 0.4,
   },
 
   docDetailedWrapper2: {
@@ -345,13 +356,20 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 12,
-    backgroundColor: '#ffffff',
-    borderRadius: 50,
-    padding: 25,
-    elevation: 2,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
     width: width * 0.2,
     height: height * 0.12,
     marginBottom: 15,
+  },
+
+  filterBtnCont: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: width * 0.2,
+    height: width * 0.2,
+    borderRadius: 50,
+    elevation: 2,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    backgroundColor: '#ffffff',
   },
 });

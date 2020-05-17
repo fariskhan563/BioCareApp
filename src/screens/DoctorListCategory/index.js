@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 
 import styles from './style';
 
@@ -100,12 +100,12 @@ class DocDetailedCategory extends Component {
               locations={[0.16, 50]}
               style={styles.upperCont}>
               <View style={styles.upperWrapper}>
-                <View style={styles.backIconWrapper}>
-                  <TouchableOpacity
-                    onPress={() => this.props.navigation.goBack()}>
-                    <Image source={Icons.BackIcon} />
-                  </TouchableOpacity>
-                </View>
+                <TouchableOpacity
+                  style={styles.backIconWrapper}
+                  activeOpacity={1}
+                  onPress={() => this.props.navigation.goBack()}>
+                  <Image source={Icons.BackIcon} />
+                </TouchableOpacity>
                 <View style={styles.titleWrapper}>
                   <Text style={styles.uName}>Ophthalmologist</Text>
                 </View>
@@ -125,7 +125,11 @@ class DocDetailedCategory extends Component {
                   showsHorizontalScrollIndicator={false}
                   data={docCatTypes}
                   renderItem={({item}) => (
-                    <TouchableOpacity activeOpacity={1}>
+                    <TouchableOpacity
+                      activeOpacity={1}
+                      onPress={() => {
+                        alert('Pressed !!!');
+                      }}>
                       <Text style={styles.catText}>{item.doc_cat_name}</Text>
                     </TouchableOpacity>
                   )}
@@ -134,169 +138,185 @@ class DocDetailedCategory extends Component {
               </View>
             </LinearGradient>
 
-            <View style={styles.docCont}>
-              <FlatList
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-                data={sponseredDoc}
-                renderItem={({item}) => (
-                  <>
-                    <View style={styles.docDetailedWrapper}>
-                      <View style={styles.sponserWrapper}>
-                        <Text style={styles.sponserText}>SPONSORED</Text>
-                      </View>
-                      <View style={styles.docSpecsWrapper}>
-                        <Image
-                          style={styles.docdetailImg}
-                          source={Images.doc_1}
-                        />
-                        <Text style={styles.perText}>97%</Text>
-                        <View style={styles.docNameWrapper}>
-                          <Text style={styles.docNameText}>Susan Witzland</Text>
-                          <Text style={styles.docSubNameText}>
-                            MBBS, DOMS, MS - Ophthalmology
-                          </Text>
-                          <Text style={styles.docprofText}>
-                            Ophthalmologist
-                          </Text>
-                          <Text style={styles.docExpText}>
-                            26 years of experience
-                          </Text>
+            <View style={styles.docContWrapper}>
+              <ScrollView>
+                <View style={styles.docCont}>
+                  <FlatList
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    data={sponseredDoc}
+                    renderItem={({item}) => (
+                      <>
+                        <View style={styles.docDetailedWrapper}>
+                          <View style={styles.sponserWrapper}>
+                            <Text style={styles.sponserText}>SPONSORED</Text>
+                          </View>
+                          <View style={styles.docSpecsWrapper}>
+                            <Image
+                              style={styles.docdetailImg}
+                              source={Images.doc_1}
+                            />
+                            <Text style={styles.perText}>97%</Text>
+                            <View style={styles.docNameWrapper}>
+                              <Text style={styles.docNameText}>
+                                Susan Witzland
+                              </Text>
+                              <Text style={styles.docSubNameText}>
+                                MBBS, DOMS, MS - Ophthalmology
+                              </Text>
+                              <Text style={styles.docprofText}>
+                                Ophthalmologist
+                              </Text>
+                              <Text style={styles.docExpText}>
+                                26 years of experience
+                              </Text>
+                            </View>
+                          </View>
+                          <View style={styles.middleWrapper}>
+                            <Text style={styles.feedText}>97 Feedback</Text>
+                            <View style={styles.nodoctorWrapper}>
+                              <Image
+                                style={styles.nodocImg}
+                                source={Icons.docDetail}
+                              />
+                              <Text style={styles.nodocText}>1 Doctor</Text>
+                            </View>
+                            <View style={styles.locationWrapper}>
+                              <Image
+                                style={styles.doclocImg}
+                                source={Icons.locationIcon}
+                              />
+                              <Text style={styles.doclocText}>South Delhi</Text>
+                            </View>
+                          </View>
+                          <View style={styles.bottom1Wrapper}>
+                            <Text style={styles.moreText}>LASIK Eye Sur…</Text>
+                            <Text style={styles.moreText}>Anterior Seg…</Text>
+                            <Text style={styles.moreText}>+2 More</Text>
+                          </View>
+                          <View style={styles.bottom2Wrapper}>
+                            <View style={styles.moneyWrapper}>
+                              <Image source={Icons.moneyIcon} />
+                              <Text style={styles.moneyText}>
+                                ₹ 700 onwards
+                              </Text>
+                            </View>
+                            <TouchableOpacity
+                              activeOpacity={1}
+                              style={styles.boxBtn2}
+                              onPress={() =>
+                                this.props.navigation.navigate(item.screenName)
+                              }>
+                              <LinearGradient
+                                colors={['#5588e7', '#75e4f7']}
+                                start={{x: 0.1, y: 0.1}}
+                                end={{x: 0.3, y: 1.9}}
+                                locations={[0.1, 0.6]}
+                                style={styles.boxBtn2}>
+                                <Text
+                                  style={[styles.btnText, {color: '#ffffff'}]}>
+                                  Contact Clinic
+                                </Text>
+                              </LinearGradient>
+                            </TouchableOpacity>
+                          </View>
                         </View>
-                      </View>
-                      <View style={styles.middleWrapper}>
-                        <Text style={styles.feedText}>97 Feedback</Text>
-                        <View style={styles.nodoctorWrapper}>
-                          <Image
-                            style={styles.nodocImg}
-                            source={Icons.docDetail}
-                          />
-                          <Text style={styles.nodocText}>1 Doctor</Text>
-                        </View>
-                        <View style={styles.locationWrapper}>
-                          <Image
-                            style={styles.doclocImg}
-                            source={Icons.locationIcon}
-                          />
-                          <Text style={styles.doclocText}>South Delhi</Text>
-                        </View>
-                      </View>
-                      <View style={styles.bottom1Wrapper}>
-                        <Text style={styles.moreText}>LASIK Eye Sur…</Text>
-                        <Text style={styles.moreText}>Anterior Seg…</Text>
-                        <Text style={styles.moreText}>+2 More</Text>
-                      </View>
-                      <View style={styles.bottom2Wrapper}>
-                        <View style={styles.moneyWrapper}>
-                          <Image source={Icons.moneyIcon} />
-                          <Text style={styles.moneyText}>₹ 700 onwards</Text>
-                        </View>
-                        <TouchableOpacity
-                          activeOpacity={1}
-                          style={styles.boxBtn2}
-                          onPress={() =>
-                            this.props.navigation.navigate(item.screenName)
-                          }>
-                          <LinearGradient
-                            colors={['#5588e7', '#75e4f7']}
-                            start={{x: 0.1, y: 0.1}}
-                            end={{x: 0.3, y: 1.9}}
-                            locations={[0.1, 0.6]}
-                            style={styles.boxBtn2}>
-                            <Text style={[styles.btnText, {color: '#ffffff'}]}>
-                              Contact Clinic
-                            </Text>
-                          </LinearGradient>
-                        </TouchableOpacity>
-                      </View>
-                    </View>
-                  </>
-                )}
-                keyExtractor={item => item.s_id}
-              />
-            </View>
+                      </>
+                    )}
+                    keyExtractor={item => item.s_id}
+                  />
+                </View>
 
-            <View style={styles.docCont2}>
-              <FlatList
-                showsVerticalScrollIndicator={false}
-                data={sponseredDoc}
-                renderItem={({item}) => (
-                  <>
-                    <View style={styles.docDetailedWrapper2}>
-                      <View style={[styles.docSpecsWrapper, {marginTop: 10}]}>
-                        <Image
-                          style={styles.docdetailImg}
-                          source={Images.doc_1}
-                        />
-                        <Text style={styles.perText}>97%</Text>
-                        <View style={styles.docNameWrapper}>
-                          <Text style={styles.docNameText}>Susan Witzland</Text>
-                          <Text style={styles.docSubNameText}>
-                            MBBS, DOMS, MS - Ophthalmology
-                          </Text>
-                          <Text style={styles.docprofText}>
-                            Ophthalmologist
-                          </Text>
-                          <Text style={styles.docExpText}>
-                            26 years of experience
-                          </Text>
+                <View style={styles.docCont2}>
+                  <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={sponseredDoc}
+                    renderItem={({item}) => (
+                      <>
+                        <View style={styles.docDetailedWrapper2}>
+                          <View
+                            style={[styles.docSpecsWrapper, {marginTop: 10}]}>
+                            <Image
+                              style={styles.docdetailImg}
+                              source={Images.doc_1}
+                            />
+                            <Text style={styles.perText}>97%</Text>
+                            <View style={styles.docNameWrapper}>
+                              <Text style={styles.docNameText}>
+                                Susan Witzland
+                              </Text>
+                              <Text style={styles.docSubNameText}>
+                                MBBS, DOMS, MS - Ophthalmology
+                              </Text>
+                              <Text style={styles.docprofText}>
+                                Ophthalmologist
+                              </Text>
+                              <Text style={styles.docExpText}>
+                                26 years of experience
+                              </Text>
+                            </View>
+                          </View>
+                          <View style={styles.middleWrapper}>
+                            <Text style={styles.feedText}>97 Feedback</Text>
+                            <View style={styles.nodoctorWrapper}>
+                              <Image
+                                style={styles.nodocImg}
+                                source={Icons.docDetail}
+                              />
+                              <Text style={styles.nodocText}>1 Doctor</Text>
+                            </View>
+                            <View style={styles.locationWrapper}>
+                              <Image
+                                style={styles.doclocImg}
+                                source={Icons.locationIcon}
+                              />
+                              <Text style={styles.doclocText}>South Delhi</Text>
+                            </View>
+                          </View>
+                          <View style={styles.bottom1Wrapper}>
+                            <Text style={styles.moreText}>LASIK Eye Sur…</Text>
+                            <Text style={styles.moreText}>Anterior Seg…</Text>
+                            <Text style={styles.moreText}>+2 More</Text>
+                          </View>
+                          <View style={styles.bottom2Wrapper}>
+                            <View style={styles.moneyWrapper}>
+                              <Image source={Icons.moneyIcon} />
+                              <Text style={styles.moneyText}>
+                                ₹ 700 onwards
+                              </Text>
+                            </View>
+                            <TouchableOpacity
+                              activeOpacity={1}
+                              style={styles.boxBtn2}
+                              onPress={() =>
+                                this.props.navigation.navigate(item.screenName)
+                              }>
+                              <LinearGradient
+                                colors={['#5588e7', '#75e4f7']}
+                                start={{x: 0.1, y: 0.1}}
+                                end={{x: 0.3, y: 1.9}}
+                                locations={[0.1, 0.6]}
+                                style={styles.boxBtn2}>
+                                <Text
+                                  style={[styles.btnText, {color: '#ffffff'}]}>
+                                  Contact Clinic
+                                </Text>
+                              </LinearGradient>
+                            </TouchableOpacity>
+                          </View>
                         </View>
-                      </View>
-                      <View style={styles.middleWrapper}>
-                        <Text style={styles.feedText}>97 Feedback</Text>
-                        <View style={styles.nodoctorWrapper}>
-                          <Image
-                            style={styles.nodocImg}
-                            source={Icons.docDetail}
-                          />
-                          <Text style={styles.nodocText}>1 Doctor</Text>
-                        </View>
-                        <View style={styles.locationWrapper}>
-                          <Image
-                            style={styles.doclocImg}
-                            source={Icons.locationIcon}
-                          />
-                          <Text style={styles.doclocText}>South Delhi</Text>
-                        </View>
-                      </View>
-                      <View style={styles.bottom1Wrapper}>
-                        <Text style={styles.moreText}>LASIK Eye Sur…</Text>
-                        <Text style={styles.moreText}>Anterior Seg…</Text>
-                        <Text style={styles.moreText}>+2 More</Text>
-                      </View>
-                      <View style={styles.bottom2Wrapper}>
-                        <View style={styles.moneyWrapper}>
-                          <Image source={Icons.moneyIcon} />
-                          <Text style={styles.moneyText}>₹ 700 onwards</Text>
-                        </View>
-                        <TouchableOpacity
-                          activeOpacity={1}
-                          style={styles.boxBtn2}
-                          onPress={() =>
-                            this.props.navigation.navigate(item.screenName)
-                          }>
-                          <LinearGradient
-                            colors={['#5588e7', '#75e4f7']}
-                            start={{x: 0.1, y: 0.1}}
-                            end={{x: 0.3, y: 1.9}}
-                            locations={[0.1, 0.6]}
-                            style={styles.boxBtn2}>
-                            <Text style={[styles.btnText, {color: '#ffffff'}]}>
-                              Contact Clinic
-                            </Text>
-                          </LinearGradient>
-                        </TouchableOpacity>
-                      </View>
-                    </View>
-                  </>
-                )}
-                keyExtractor={item => item.s_id}
-              />
+                      </>
+                    )}
+                    keyExtractor={item => item.s_id}
+                  />
+                </View>
+              </ScrollView>
             </View>
           </View>
         </View>
         <View style={styles.filterBtnWrapper}>
           <TouchableOpacity
+            style={styles.filterBtnCont}
             activeOpacity={1}
             onPress={() => this.props.navigation.navigate('DocFilteration')}>
             <Image style={styles.filterImg} source={Icons.filterIcon} />

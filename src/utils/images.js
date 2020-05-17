@@ -17,4 +17,5 @@ export default {
   clinicalBg: require('../assets/images/clinicalBg.png'),
   starGroup: require('../assets/images/starGroup.png'),
   mapImage: require('../assets/images/mapImage.png'),
+  docProfileImages: require('../assets/images/docProfileImages.png'),
 };

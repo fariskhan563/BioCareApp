@@ -23,6 +23,7 @@ import TimeSlot3 from '../screens/TimeSlot3';
 import DocDetailedCategory from '../screens/DoctorListCategory';
 import DocFilteration from '../screens/DoctorFilteration';
 import ClinicalScreen from '../screens/ClinicalScreen';
+import DoctorScreen from '../screens/DoctorScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -117,6 +118,7 @@ function Navigation() {
           component={DocDetailedCategory}
         />
         <Stack.Screen name="DocFilteration" component={DocFilteration} />
+        <Stack.Screen name="DoctorScreen" component={DoctorScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

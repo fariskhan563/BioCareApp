@@ -22,12 +22,12 @@ class TimeSlot3 extends Component {
               locations={[0.16, 50]}
               style={styles.upperCont}>
               <View style={styles.upperWrapper}>
-                <View style={styles.backIconWrapper}>
-                  <TouchableOpacity
-                    onPress={() => this.props.navigation.goBack()}>
-                    <Image source={Icons.BackIcon} />
-                  </TouchableOpacity>
-                </View>
+                <TouchableOpacity
+                  style={styles.backIconWrapper}
+                  activeOpacity={1}
+                  onPress={() => this.props.navigation.goBack()}>
+                  <Image source={Icons.BackIcon} />
+                </TouchableOpacity>
                 <View style={styles.titleWrapper}>
                   <Text style={styles.uName}>Select a time slot</Text>
                 </View>

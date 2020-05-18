@@ -253,7 +253,12 @@ class FindAndBook extends Component {
               showsHorizontalScrollIndicator={false}
               data={doctors}
               renderItem={({item}) => (
-                <View style={styles.docItemWrapper}>
+                <TouchableOpacity
+                  style={styles.docItemWrapper}
+                  activeOpacity={1}
+                  onPress={() =>
+                    this.props.navigation.navigate('DoctorScreen')
+                  }>
                   <View style={styles.docItemUpper}>
                     <Image
                       source={item.doc_img}
@@ -282,7 +287,7 @@ class FindAndBook extends Component {
                       </View>
                     </View>
                   </View>
-                </View>
+                </TouchableOpacity>
               )}
               keyExtractor={item => item.id}
             />

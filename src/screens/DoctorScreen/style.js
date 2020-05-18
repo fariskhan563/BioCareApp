@@ -89,10 +89,10 @@ export default StyleSheet.create({
   },
 
   profileImgWrap: {
-    width: width * 0.21,
-    height: width * 0.21,
+    width: width * 0.22,
+    height: width * 0.22,
     borderRadius: 50,
-    borderWidth: 3,
+    borderWidth: 4,
     borderColor: '#ffffff',
   },
 

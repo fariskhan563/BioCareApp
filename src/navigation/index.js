@@ -8,6 +8,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../utils';
 
 //Screens
+import Login from '../screens/Login';
+
 import Home from '../screens/Home';
 import Pharmacy from '../screens/Pharmacy';
 import Records from '../screens/Records';
@@ -100,10 +102,11 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="AppHome"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}>
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="AppHome" component={AppHome} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Offer" component={Offers} />

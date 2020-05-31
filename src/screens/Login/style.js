@@ -1,0 +1,90 @@
+import {StyleSheet, Dimensions} from 'react-native';
+const {width, height} = Dimensions.get('window');
+
+export default StyleSheet.create({
+  wrapper: {
+    width,
+    height,
+    display: 'flex',
+    justifyContent: 'flex-start',
+  },
+  bgImage: {
+    width: '100%',
+    height: '111%',
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  logoCont: {
+    width: '80%',
+    height: height * 0.27,
+    marginTop: height * 0.2,
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    // backgroundColor: 'pink',
+  },
+  textCont: {
+    width: '80%',
+    height: height * 0.1,
+    justifyContent: 'center',
+    // backgroundColor: 'yellow',
+  },
+  heading: {
+    fontFamily: 'Helvetica Neue',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: width * 0.055,
+    marginTop: height * 0.01,
+    color: '#59A3EE',
+  },
+  subText: {
+    fontFamily: 'Helvetica Neue',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    fontSize: width * 0.032,
+    marginTop: height * 0.008,
+    color: '#333333',
+  },
+  numBtnCont: {
+    width: '80%',
+    height: height * 0.23,
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    // backgroundColor: 'lightgreen',
+  },
+  numCont: {
+    width: '100%',
+    height: height * 0.08,
+    borderBottomWidth: 1,
+    // backgroundColor: 'silver',
+  },
+  countryPicker: {
+    width: '100%',
+    height: '100%',
+    // backgroundColor: 'pink',
+  },
+  btnCont: {
+    width: '105%',
+    height: height * 0.1,
+    justifyContent: 'center',
+    // backgroundColor: 'maroon',
+  },
+  btn: {
+    // width: '100%',
+    elevation: 5,
+    borderWidth: 0,
+    borderColor: '#ffffff',
+  },
+  socialText: {
+    fontFamily: 'Helvetica Neue',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    fontSize: width * 0.037,
+    marginTop: height * 0.02,
+    color: '#5588E7',
+  },
+});

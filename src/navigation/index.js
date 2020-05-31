@@ -8,6 +8,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../utils';
 
 //Screens
+import Login from '../screens/Login';
+
 import Home from '../screens/Home';
 import Pharmacy from '../screens/Pharmacy';
 import Records from '../screens/Records';
@@ -23,6 +25,7 @@ import TimeSlot3 from '../screens/TimeSlot3';
 import DocDetailedCategory from '../screens/DoctorListCategory';
 import DocFilteration from '../screens/DoctorFilteration';
 import ClinicalScreen from '../screens/ClinicalScreen';
+import DoctorScreen from '../screens/DoctorScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -99,10 +102,11 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="AppHome"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}>
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="AppHome" component={AppHome} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Offer" component={Offers} />
@@ -117,6 +121,7 @@ function Navigation() {
           component={DocDetailedCategory}
         />
         <Stack.Screen name="DocFilteration" component={DocFilteration} />
+        <Stack.Screen name="DoctorScreen" component={DoctorScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

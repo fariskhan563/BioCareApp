@@ -17,4 +17,10 @@ export default {
   clinicalBg: require('../assets/images/clinicalBg.png'),
   starGroup: require('../assets/images/starGroup.png'),
   mapImage: require('../assets/images/mapImage.png'),
+  docProfileImages: require('../assets/images/docProfileImages.png'),
+  loginBg: require('../assets/images/loginBg.png'),
+  loginLogo: require('../assets/images/loginLogo.png'),
+  loginBtnArrow: require('../assets/images/loginBtnArrow.png'),
+  loginBtnArrow2: require('../assets/images/loginBtnArrow2.png'),
+
 };

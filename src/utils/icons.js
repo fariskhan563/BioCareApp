@@ -43,4 +43,5 @@ export default {
   searchHomeIcon: require('../assets/icons/searchHomeIcon.png'),
   FilterWhiteIcon: require('../assets/icons/filterWIcon.png'),
   CloseIcon: require('../assets/icons/closeIcon.png'),
+  BackIcon2: require('../assets/icons/backIcon2.png'),
 };

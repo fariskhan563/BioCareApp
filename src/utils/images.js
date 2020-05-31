@@ -22,5 +22,8 @@ export default {
   loginLogo: require('../assets/images/loginLogo.png'),
   loginBtnArrow: require('../assets/images/loginBtnArrow.png'),
   loginBtnArrow2: require('../assets/images/loginBtnArrow2.png'),
-
+  otpBg: require('../assets/images/otpBg.png'),
+  otpLogo: require('../assets/images/otpLogo.png'),
+  otpBtnArrow: require('../assets/images/otpBtnArrow.png'),
+  otpBtnArrow2: require('../assets/images/otpBtnArrow2.png'),
 };

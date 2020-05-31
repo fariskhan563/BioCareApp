@@ -76,7 +76,7 @@ class Login extends Component {
                   }
                   onSwipeFail={() => this.setState({btn: Images.loginBtnArrow})}
                   onSwipeSuccess={() =>
-                    this.props.navigation.navigate('AppHome')
+                    this.props.navigation.navigate('Otp')
                   }
                   containerStyles={styles.btn}
                   railBackgroundColor={'#ffffff'}

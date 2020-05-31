@@ -9,6 +9,7 @@ import {Icons} from '../utils';
 
 //Screens
 import Login from '../screens/Login';
+import Otp from '../screens/OtpScreen';
 
 import Home from '../screens/Home';
 import Pharmacy from '../screens/Pharmacy';
@@ -107,6 +108,7 @@ function Navigation() {
           headerShown: false,
         }}>
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Otp" component={Otp} />
         <Stack.Screen name="AppHome" component={AppHome} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Offer" component={Offers} />

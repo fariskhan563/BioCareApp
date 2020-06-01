@@ -12,10 +12,16 @@ export default StyleSheet.create({
     width: '100%',
     height: '111%',
     resizeMode: 'cover',
-    justifyContent: 'center',
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  scrollWrapper: {
+    width,
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    // backgroundColor: 'pink',
   },
   logoCont: {
     width: '80%',

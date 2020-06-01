@@ -26,4 +26,9 @@ export default {
   otpLogo: require('../assets/images/otpLogo.png'),
   otpBtnArrow: require('../assets/images/otpBtnArrow.png'),
   otpBtnArrow2: require('../assets/images/otpBtnArrow2.png'),
+  socialLoginArrow: require('../assets/images/socialLoginArrow.png'),
+  socialLoginArrow2: require('../assets/images/socialLoginArrow2.png'),
+  fbLogo: require('../assets/images/fbLogo.png'),
+  googleLogo: require('../assets/images/googleLogo.png'),
+  appleLogo: require('../assets/images/appleLogo.png'),
 };

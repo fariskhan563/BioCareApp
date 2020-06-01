@@ -8,9 +8,14 @@ export default StyleSheet.create({
     display: 'flex',
     justifyContent: 'flex-start',
   },
+  scrollWrapper: {
+    width,
+    display: 'flex',
+    justifyContent: 'flex-start',
+  },
   bgImage: {
-    width: '100%',
-    height: '100%',
+    width,
+    height,
     resizeMode: 'cover',
     justifyContent: 'center',
     display: 'flex',

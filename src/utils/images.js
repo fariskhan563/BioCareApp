@@ -31,4 +31,9 @@ export default {
   fbLogo: require('../assets/images/fbLogo.png'),
   googleLogo: require('../assets/images/googleLogo.png'),
   appleLogo: require('../assets/images/appleLogo.png'),
+  medicineLogo: require('../assets/images/medicineLogo.png'),
+  doctorsLogo: require('../assets/images/doctorsLogo.png'),
+  labtestLogo: require('../assets/images/labtestLogo.png'),
+  insuranceLogo: require('../assets/images/insuranceLogo.png'),
+  bannerBtn: require('../assets/images/bannerBtn.png'),
 };

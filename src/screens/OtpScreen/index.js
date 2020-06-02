@@ -85,7 +85,7 @@ class Otp extends Component {
                         this.setState({btn: Images.otpBtnArrow})
                       }
                       onSwipeSuccess={() =>
-                        this.props.navigation.navigate('AppHome')
+                        this.props.navigation.navigate('AppIntro')
                       }
                       containerStyles={styles.btn}
                       railBackgroundColor={'#ffffff'}

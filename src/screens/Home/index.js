@@ -117,7 +117,7 @@ const doctors = [
   },
 ];
 
-class FindAndBook extends Component {
+class Home extends Component {
   scrollX = new Animated.Value(0); // this will be the scroll location of our ScrollView
 
   render() {
@@ -298,4 +298,4 @@ class FindAndBook extends Component {
   }
 }
 
-export default FindAndBook;
+export default Home;

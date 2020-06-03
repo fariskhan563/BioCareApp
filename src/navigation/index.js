@@ -11,7 +11,6 @@ import {Icons} from '../utils';
 import Login from '../screens/Login';
 import Otp from '../screens/OtpScreen';
 import SocialLogin from '../screens/SocialLogin';
-import AppIntro from '../screens/AppIntro';
 import Home from '../screens/Home';
 import Pharmacy from '../screens/Pharmacy';
 import Records from '../screens/Records';
@@ -111,8 +110,7 @@ function Navigation() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SocialLogin" component={SocialLogin} />
         <Stack.Screen name="Otp" component={Otp} />
-        <Stack.Screen name="AppIntro" component={AppIntro} />
-        {/* <Stack.Screen name="AppHome" component={AppHome} /> */}
+        <Stack.Screen name="AppHome" component={AppHome} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Offer" component={Offers} />
         <Stack.Screen name="FindBook" component={FindAndBook} />
